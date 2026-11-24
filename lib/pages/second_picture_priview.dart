@@ -5,7 +5,7 @@ import 'package:urban_rider/pages/map.dart';
 
 class SecondPicturePreview extends StatefulWidget {
   final File? image;
-  const SecondPicturePreview({Key? key, required this.image}) : super(key: key);
+  const SecondPicturePreview({super.key, required this.image});
 
   @override
   State<SecondPicturePreview> createState() => _SecondPicturePreviewState();
@@ -27,12 +27,12 @@ class _SecondPicturePreviewState extends State<SecondPicturePreview> {
                   color: Colors.red.withOpacity(0.55),
                   border: Border.all(width: 3)
               ),
-              child: widget.image==null? Text("there is no image"):Image.file(
+              child: widget.image==null? const Text("there is no image"):Image.file(
                 widget.image!,
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 50,),
+            const SizedBox(height: 50,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -47,12 +47,12 @@ class _SecondPicturePreviewState extends State<SecondPicturePreview> {
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(width: 3)
                     ),
-                    child: Center(child: Text("Retake",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 20),)),
+                    child: const Center(child: Text("Retake",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 20),)),
                   ),
                 ),
                 InkWell(
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>MapPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const MapPage()));
 
                   },
                   child: Container(
@@ -64,7 +64,7 @@ class _SecondPicturePreviewState extends State<SecondPicturePreview> {
                         border: Border.all(width: 3),
                         color: Colors.black
                     ),
-                    child: Center(child: Row(
+                    child: const Center(child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("Start Ride",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: 20),),
